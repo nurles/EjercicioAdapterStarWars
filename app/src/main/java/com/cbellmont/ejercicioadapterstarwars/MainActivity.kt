@@ -25,15 +25,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun createRecyclerView() {
-        film_recycler_view.layoutManager = LinearLayoutManager(this)
-        film_recycler_view.adapter = adapter
+        filmRecyclerView.layoutManager = LinearLayoutManager(this)
+        filmRecyclerView.adapter = adapter
     }
 
 
     private fun downloadAll(){
         CoroutineScope(Dispatchers.IO).launch {
             val list = loadFilmInBackground()
-            setTextOnMainThread(list)
+            setAdapterOnMainThread(list)
         }
     }
 
@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private suspend fun setTextOnMainThread(filmsList: MutableList<Film>) {
+    private suspend fun setAdapterOnMainThread(filmsList: MutableList<Film>) {
         withContext(Dispatchers.Main) {
             adapter.updateFilms(filmsList)
             pbLoading.visibility = View.GONE

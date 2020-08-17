@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/film_recycler_view"
+        android:id="@+id/filmRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -25,7 +25,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:indeterminate="true"
-        app:layout_constraintStart_toStartOf="@+id/film_recycler_view"
-        app:layout_constraintTop_toTopOf="@+id/film_recycler_view" />
+        app:layout_constraintStart_toStartOf="@+id/filmRecyclerView"
+        app:layout_constraintTop_toTopOf="@+id/filmRecyclerView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
