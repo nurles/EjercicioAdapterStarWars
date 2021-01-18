@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private suspend fun loadFilmInBackground() : MutableList<Film>{
+        //El withcontext(Dispatchers.IO) no es estrictamente necesario. Lo ponemos solo por seguridad
         return withContext(Dispatchers.IO) {
             return@withContext model.getFilms()
         }
